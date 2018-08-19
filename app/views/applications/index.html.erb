@@ -1,0 +1,70 @@
+<h1 class="mt-20">The Marketplace</h1>
+
+<div class="flex">
+    <a href="<%= new_application_path %>" class="button--secondary flex mx-auto mt-2">Submit a New App</a>
+</div>
+
+<h2 class="mt-12 mb-4">Featured Apps</h2>
+
+<div class="cards">
+
+    <%  
+        i = 0
+        while i < 5 do
+    %>
+
+    <a class="card" href="<%= application_path 1 %>">
+        <img src="//placehold.it/50x50" class="card__icon" />
+        <h3 class="card__title">Application Name</h3>
+        <p class="card__description">Lorem ipsum sit amet dolor conseguir</p>
+    </a>
+
+    <%
+        i += 1
+        end
+    %>
+
+</div>
+
+<h2 class="mt-12 mb-4">Categories</h2>
+
+<div class="cards">
+
+    <%
+        i = 0
+        while i < 10 do
+    %>
+
+    <a class="card--mini" href="<%= category_path 1 %>">
+        <img src="//placehold.it/50x50" class="card__icon" />
+        <h3 class="card__title">Category Name</h3>
+    </a>
+
+    <%
+        i += 1
+        end 
+    %>
+
+</div>
+
+<h2 class="mt-12 mb-4">Recently Added</h2>
+
+<div class="cards">
+
+    <% 
+        i = 0
+        while i < 15 do 
+    %>
+
+    <a class="card" href="<%= application_path 1 %>">
+        <img src="//placehold.it/50x50" class="card__icon" />
+        <h3 class="card__title">Application Name</h3>
+        <p class="card__description">Lorem ipsum sit amet dolor conseguir</p>
+    </a>
+
+    <% 
+        i += 1
+        end 
+    %>
+
+</div>

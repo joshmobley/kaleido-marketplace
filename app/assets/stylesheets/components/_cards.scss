@@ -1,0 +1,63 @@
+.cards {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+
+    &--3 {
+        @extend .cards;
+        
+        .card {
+            width: 31%;
+        }
+    }
+}
+
+.card {
+    border: 1px solid $grey-lighter;
+    box-shadow: 0 0 20px $grey-lighter;
+    box-sizing: border-box;
+    border-radius: 7px;
+    color: $black;
+    cursor: pointer;
+    margin-bottom: 1rem;
+    transition: all .3s;
+    padding: 2rem 1rem;
+    width: 19%;
+
+    &:hover {
+        box-shadow: 0 2px 20px $grey-light;
+        transform: translateY(-2px);
+    }
+
+    &__description {
+        font-size: .8rem;
+        font-weight: 300;
+        margin-top: .5rem;
+        text-align: center;
+    }
+
+    &__icon {
+        border-radius: 9999rem;
+        display: block;
+        margin: 0 auto 1rem;
+    }
+
+    &__title {
+        text-align: center;
+    }
+
+    &--mini {
+        @extend .card;
+        align-items: center;
+        display: flex;
+        padding: 1rem;
+
+        .card {
+            &__icon {
+                height: 30px;
+                margin: 0 1rem 0 0;
+                width: 30px;
+            }
+        }
+    }
+}

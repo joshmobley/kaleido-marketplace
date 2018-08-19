@@ -1,0 +1,17 @@
+
+
+.site-header {
+    background: $blue;
+    margin-bottom: 2rem;
+    padding: 2rem 0;
+
+    .wrapper {
+        align-items: center;
+        display: flex;
+        justify-content: space-between;
+    }
+
+    a {
+        color: $white;
+    }
+}

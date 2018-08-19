@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>KaleidoMarketplace</title>
+    <%= csrf_meta_tags %>
+    <%= csp_meta_tag %>
+
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+  </head>
+
+  <body>
+    <header class="site-header">
+      <div class="wrapper">
+        <img src="https://kaleido.io/wp-content/themes/kaleido/dist/img/logo.svg" alt="KALEIDO" />
+        
+        <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <%= button_to 'Sign out', sign_out_path, method: :delete %>
+        <% else %>
+          <a href="<%= sign_in_path %>">Sign In</a>
+        <% end %>
+      </div>
+    </header>
+
+
+  
+        <div id="flash">
+          <% flash.each do |key, value| %>
+            <div class="flash <%= key %>"><%= value %></div>
+          <% end %>
+        </div>
+
+    <div class="wrapper">
+      <%= yield %>
+    </div>
+
+    <footer class="site-footer">
+      <div class="wrapper">
+        <img src="https://kaleido.io/wp-content/themes/kaleido/dist/img/logo.svg" alt="KALEIDO" />
+      </div>
+    </footer>
+
+  </body>
+</html>

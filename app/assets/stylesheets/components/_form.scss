@@ -1,0 +1,43 @@
+
+
+form, .form {
+
+    label {
+        color: $grey;
+        display: block;
+        font-size: .9rem;
+        margin-bottom: .5rem;
+        text-transform: uppercase;
+    }
+
+    input, textarea {
+        border: 1px solid $grey-light;
+        margin-bottom: 1.5rem;
+        padding: .75rem;
+        resize: none;
+        width: 100%;
+    }
+
+    &__screenshot {
+        align-items: center;
+        background: $grey-lighter;
+        color: $grey-light;
+        cursor: pointer;
+        display: flex;
+        float: left;
+        height: 175px;
+        justify-content: center;
+        margin-bottom: 2rem;
+        transition: color .3s;
+        width: 48%;
+
+        &:hover {
+            color: $grey;
+        }
+
+        + .form__screenshot {
+            margin-left: 4%;
+        }
+    }
+    
+}

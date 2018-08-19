@@ -1,0 +1,52 @@
+<a href="<%= applications_path %>">Marketplace</a>
+
+<h1 class="mt-8">Submit a New App</h1>
+
+<p class="max-w-md mx-auto mt-12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+<div class="mt-16 mx-auto max-w-md">
+
+<%= form_with scope: :application do |form| %>
+
+    <%= form.label :application_name %>
+    <%= form.text_field :title %>
+
+    <%= form.label :developer_name %>
+    <%= form.text_field :author %>
+
+    <%= form.label :repo_name %>
+    <%= form.text_field :author %>
+
+    <%= form.label :description_of_application %>
+    <%= form.text_area :description, rows: "6" %>
+
+    <%= form.label :add_screenshots %>
+    <div class="form__screenshot">Add Screenshot</div>
+    <div class="form__screenshot">Add Screenshot</div>
+
+    <%= form.label :select_categories_that_apply %>
+    <div class="cards--3 mt-4">
+        <%
+            i = 0
+            while i < 10 do
+        %>
+        <div class="card--mini">
+            <img src="//placehold.it/50x50" class="card__icon" />
+            <h3 class="card__header">Category Name</h3>
+        </div>
+        <%
+            i += 1
+            end
+        %>
+    </div>
+
+    <p class="max-w-md mx-auto mt-12 mb-12">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+
+    <div class="flex items-center justify-center mb-24">
+        <a href="<%= applications_path %>" class="button--primary mr-4">Submit Application</a>
+        <a href="<%= applications_path %>">Cancel</a>
+    </div>
+
+<% end %>
+
+</div>
